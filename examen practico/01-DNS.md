@@ -11,7 +11,7 @@ El servicio DNS implementado mediante **BIND (`named`)** actúa como servidor de
 | Parámetro | Detalle / Valor |
 | :--- | :--- |
 | **Hostname del Servidor** | `srv-jerves-espinoza` |
-| **Dirección IP del Servidor** | `192.168.0.110` |
+| **Dirección IP del Servidor** | `192.168.0.102` |
 | **Zona Directa Configurada** | `jerves-espinoza.lab` |
 | **Puerto y Protocolo** | `53/TCP` y `53/UDP` |
 | **Paquetes Instalados** | `bind`, `bind-utils` |
@@ -36,11 +36,11 @@ ls -lh /root/backups_interciclo/
 ```
 
 ### 2. Configuración Principal (`/etc/named.conf`)
-Se habilitó la escucha en la interfaz de red del servidor (`192.168.0.110`) y se permitió la consulta desde la subred local (`192.168.0.0/24`), declarando al final la zona maestra `jerves-espinoza.lab`:
+Se habilitó la escucha en la interfaz de red del servidor (`192.168.0.102`) y se permitió la consulta desde la subred local (`192.168.0.0/24`), declarando al final la zona maestra `jerves-espinoza.lab`:
 
 ```text
 options {
-        listen-on port 53 { 127.0.0.1; 192.168.0.110; };
+        listen-on port 53 { 127.0.0.1; 192.168.0.102; };
         listen-on-v6 port 53 { ::1; };
         directory       "/var/named";
         dump-file       "/var/named/data/cache_dump.db";
@@ -61,7 +61,7 @@ zone "jerves-espinoza.lab" IN {
 ```
 
 ### 3. Creación del Archivo de Zona Directa (`/var/named/jerves-espinoza.lab.zone`)
-Se definieron los registros `SOA`, `NS` y los registros `A` asociados al servidor y a los servicios web y SSH apuntando a `192.168.0.110`:
+Se definieron los registros `SOA`, `NS` y los registros `A` asociados al servidor y a los servicios web y SSH apuntando a `192.168.0.102`:
 
 ```text
 $TTL 86400
@@ -76,12 +76,12 @@ $TTL 86400
 @       IN  NS      ns1.jerves-espinoza.lab.
 
 ; Registros de Dirección (A)
-ns1     IN  A       192.168.0.110
-srv     IN  A       192.168.0.110
-web     IN  A       192.168.0.110
-www     IN  A       192.168.0.110
-ssh     IN  A       192.168.0.110
-admin   IN  A       192.168.0.110
+ns1     IN  A       192.168.0.102
+srv     IN  A       192.168.0.102
+web     IN  A       192.168.0.102
+www     IN  A       192.168.0.102
+ssh     IN  A       192.168.0.102
+admin   IN  A       192.168.0.102
 ```
 
 ### 4. Validación de Sintaxis y Arranque del Servicio
@@ -126,12 +126,12 @@ ls -Z /var/named/jerves-espinoza.lab.zone
 ## 04 Pruebas de Aceptación y Troubleshooting
 
 ### 1. Validación Funcional desde el Servidor y Cliente
-Desde la máquina cliente (anfitriona), se verificó la resolución de los registros `A` apuntando directamente a la IP `192.168.0.110`:
+Desde la máquina cliente (anfitriona), se verificó la resolución de los registros `A` apuntando directamente a la IP `192.168.0.102`:
 
 ```bash
 # Prueba de resolución con nslookup / dig
-nslookup web.jerves-espinoza.lab 192.168.0.110
-nslookup ssh.jerves-espinoza.lab 192.168.0.110
+nslookup web.jerves-espinoza.lab 192.168.0.102
+nslookup ssh.jerves-espinoza.lab 192.168.0.102
 ```
 
 **Evidencia en consola (Servidor y Cliente):**
@@ -146,6 +146,9 @@ nslookup ssh.jerves-espinoza.lab 192.168.0.110
   ```bash
   chown root:named /var/named/jerves-espinoza.lab.zone
   chmod 640 /var/named/jerves-espinoza.lab.zone
+  restorecon -v /var/named/jerves-espinoza.lab.zone
+  systemctl restart named
+  ```
   restorecon -v /var/named/jerves-espinoza.lab.zone
   systemctl restart named
   ```
