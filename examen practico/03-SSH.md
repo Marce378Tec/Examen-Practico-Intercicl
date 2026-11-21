@@ -11,7 +11,7 @@ El servicio **OpenSSH (`sshd`)** proporciona administración remota cifrada y tr
 | Parámetro | Detalle / Valor |
 | :--- | :--- |
 | **Hostname del Servidor** | `srv-jerves-espinoza` |
-| **Dirección IP del Servidor** | `192.168.0.110` |
+| **Dirección IP del Servidor** | `192.168.0.102` |
 | **Dominio de Acceso Remoto** | `ssh.jerves-espinoza.lab` |
 | **Puerto Personalizado** | `2222/TCP` |
 | **Usuario Remoto Operativo** | `jerves_espinoza` |
