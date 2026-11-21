@@ -6,10 +6,10 @@
 ### 📋 Información General
 * **Asignatura:** S01
 * **Modalidad:** En Parejas
-* **Integrante 1:** [Nombre Completo] Jerves
-* **Integrante 2:** [Nombre Completo] Espinoza
+* **Integrante 1:** Carlos Jerves
+* **Integrante 2:** Marcelino Espinoza
 * **Sistema Operativo:** CentOS / RHEL (Máquina Virtual)
-* **Fecha:** Noviembre 2026
+* **Fecha:** 20 de Noviembre 2026
 
 ---
 
