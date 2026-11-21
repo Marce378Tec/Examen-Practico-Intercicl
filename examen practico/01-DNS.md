@@ -156,7 +156,7 @@ dir prueba*
 
 **Evidencia en consola (Servidor y Cliente):**
 > *(Pegar aquí las capturas de pantalla donde se observe claramente el prompt `root@srv-jerves-espinoza`, el estado `active (running)` de `named` y la respuesta exitosa de `nslookup` desde el cliente)[cite: 1, 2].*
-> `<img width="540" height="141" alt="image" src="https://github.com/user-attachments/assets/44c1f85f-33f6-49bc-8444-4e753f23f184" />
+> <img width="540" height="141" alt="image" src="https://github.com/user-attachments/assets/44c1f85f-33f6-49bc-8444-4e753f23f184" />
 `
 > `![Evidencia DNS Cliente](ruta/a/tu/captura_dns_cliente.png)`
 
