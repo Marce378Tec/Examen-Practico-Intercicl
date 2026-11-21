@@ -305,9 +305,9 @@ curl -I [http://web.jerves-espinoza.lab](http://web.jerves-espinoza.lab)
 ```
 
 **Evidencia en consola y navegador:**
-> *(Pegar aquí las capturas de pantalla donde se observe el estado `active (running)` de `httpd` con el prompt `root@srv-jerves-espinoza`, y el navegador web mostrando la página cargada mediante `http://web.jerves-espinoza.lab` con ambos nombres).*
-> `![Evidencia HTTPD Servidor](ruta/a/tu/captura_httpd_srv.png)`
-> `![Evidencia HTTPD Navegador](ruta/a/tu/captura_httpd_web.png)`
+<img width="940" height="467" alt="image" src="https://github.com/user-attachments/assets/b74d472a-2f6e-4442-8027-cb26d4cf4139" />
+<img width="940" height="498" alt="image" src="https://github.com/user-attachments/assets/fc700da7-3d7d-4a25-a40f-5971a60d0eff" />
+
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
 * **Problema detectado:** Al ingresar `http://web.jerves-espinoza.lab` en el navegador de la máquina anfitriona por primera vez, el navegador arrojó un error de sitio no encontrado (`DNS_PROBE_FINISHED_NXDOMAIN`).
