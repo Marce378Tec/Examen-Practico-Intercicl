@@ -17,7 +17,7 @@
 | Parámetro | Valor Configurado |
 | :--- | :--- |
 | **Hostname del Servidor** | `srv-jerves-espinoza` |
-| **Dirección IP (VM)** | `192.168.1.50` *(Actualizar con su IP real)* |
+| **Dirección IP (VM)** | `192.168.0.110` |
 | **Dominio DNS Local** | `jerves-espinoza.lab` |
 | **Directorio de Respaldos** | `/root/backups_interciclo/` |
 | **Seguridad Activa** | `SELinux (Enforcing)` + `firewalld` |
