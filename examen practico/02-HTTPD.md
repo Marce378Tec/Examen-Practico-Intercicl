@@ -1,16 +1,47 @@
-# ==============================================================================
-# SERVICIO 02: SERVIDOR WEB (HTTPD / Apache) - IP: 192.168.0.110
-# ==============================================================================
+# Servicio 02: Servidor Web (`httpd` / Apache)
 
-# 1. Instalación de Apache y respaldo previo con marca de tiempo
+---
+
+## 01 Arquitectura y Requisitos
+
+### Rol del Servicio
+El servidor web implementado mediante **Apache (`httpd`)** aloja y sirve contenido HTML estático a través del protocolo HTTP para los clientes de la red local. En cumplimiento con la modalidad en parejas, sirve una página de demostración personalizada en entorno aislado de laboratorio accesible mediante el nombre de dominio `web.jerves-espinoza.lab` resuelto por el servidor DNS local.
+
+### Especificaciones Técnicas
+| Parámetro | Detalle / Valor |
+| :--- | :--- |
+| **Hostname del Servidor** | `srv-jerves-espinoza` |
+| **Dirección IP del Servidor** | `192.168.0.110` |
+| **Dominio Web Asignado** | `http://web.jerves-espinoza.lab` |
+| **Puerto y Protocolo** | `80/TCP` (HTTP) |
+| **Paquete Instalado** | `httpd` |
+| **Archivo de Configuración Principal** | `/etc/httpd/conf/httpd.conf` |
+| **Directorio Raíz Web (DocumentRoot)** | `/var/www/html/` |
+| **Archivo Web Personalizado** | `/var/www/html/index.html` |
+| **Ruta de Respaldo Previo** | `/root/backups_interciclo/httpd.conf.YYYY-MM-DD_HHMM.bak` |
+
+---
+
+## 02 Despliegue y Configuración
+
+### 1. Instalación de Paquete y Respaldo Previo
+Antes de modificar la configuración o el contenido web por defecto, se instaló el servicio Apache y se respaldaron los archivos originales con marca de tiempo:
+
+```bash
+# Instalación del servidor web Apache
 dnf install -y httpd
+
+# Respaldo previo de la configuración y página de bienvenida
 FECHA=$(date +%F_%H%M)
 cp -p /etc/httpd/conf/httpd.conf /root/backups_interciclo/httpd.conf.${FECHA}.bak
-[ -f /etc/httpd/conf.d/welcome.conf ] && cp -p /etc/httpd/conf.d/welcome.conf /root/backups_interciclo/welcome.conf.${FECHA}.bak
-[ -f /var/www/html/index.html ] && cp -p /var/www/html/index.html /root/backups_interciclo/index.html.${FECHA}.bak
+cp -p /etc/httpd/conf.d/welcome.conf /root/backups_interciclo/welcome.conf.${FECHA}.bak
+ls -lh /root/backups_interciclo/
+```
 
-# 2. Creación de página personalizada (Modalidad Parejas: Jerves y Espinoza)
-cat << 'EOF' > /var/www/html/index.html
+### 2. Creación de Página Web Personalizada (`/var/www/html/index.html`)
+Se implementó el documento HTML de demostración identificando visiblemente a ambos integrantes en formato `nombre_apellido`, junto con los parámetros del servidor de laboratorio:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -37,15 +68,54 @@ cat << 'EOF' > /var/www/html/index.html
     </div>
 </body>
 </html>
-EOF
+```
 
-# 3. Restaurar contexto SELinux, arrancar servicio y abrir Firewall
-restorecon -Rv /var/www/html/
+### 3. Habilitación y Arranque del Servicio
+```bash
 systemctl enable --now httpd
+systemctl status httpd
+```
+
+---
+
+## 03 Aseguramiento Seguridad SELinux/Firewall
+
+### Gestión de Firewall (`firewalld`)
+Se habilitó únicamente el tráfico entrante para el servicio `http` (`80/TCP`) de manera permanente para permitir el acceso desde el navegador de la máquina cliente:
+
+```bash
 firewall-cmd --permanent --add-service=http
 firewall-cmd --reload
-
-# 4. Verificación
-systemctl status httpd --no-pager
 firewall-cmd --list-all
+```
+
+### Gestión de Contextos en SELinux
+Manteniendo SELinux en modo `Enforcing`, se verificó y restauró el contexto de seguridad `httpd_sys_content_t` en `/var/www/html/index.html` para garantizar que el proceso de Apache tenga autorización de lectura sobre el archivo creado:
+
+```bash
+getenforce
+restorecon -Rv /var/www/html/
 ls -Z /var/www/html/index.html
+```
+
+---
+
+## 04 Pruebas de Aceptación y Troubleshooting
+
+### 1. Validación Funcional desde el Servidor y Cliente
+Se comprobó la respuesta HTTP local desde consola mediante `curl` y desde el navegador web de la máquina cliente apuntando al dominio `http://web.jerves-espinoza.lab`:
+
+```bash
+# Verificación de cabeceras HTTP desde consola
+curl -I [http://web.jerves-espinoza.lab](http://web.jerves-espinoza.lab)
+```
+
+**Evidencia en consola y navegador:**
+> *(Pegar aquí las capturas de pantalla donde se observe el estado `active (running)` de `httpd` con el prompt `root@srv-jerves-espinoza`, y el navegador web mostrando la página cargada mediante `http://web.jerves-espinoza.lab` con ambos nombres).*
+> `![Evidencia HTTPD Servidor](ruta/a/tu/captura_httpd_srv.png)`
+> `![Evidencia HTTPD Navegador](ruta/a/tu/captura_httpd_web.png)`
+
+### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
+* **Problema detectado:** Al ingresar `http://web.jerves-espinoza.lab` en el navegador de la máquina anfitriona por primera vez, el navegador arrojó un error de sitio no encontrado (`DNS_PROBE_FINISHED_NXDOMAIN`).
+* **Causa raíz:** La tarjeta de red de la máquina anfitriona (cliente) aún estaba utilizando el servidor DNS automático del router doméstico (DHCP), el cual desconoce la zona interna `.lab`.
+* **Solución aplicada:** Se configuró manualmente la dirección IP `192.168.0.110` como servidor DNS preferido en las propiedades IPv4 del adaptador de red de la máquina cliente y se limpió la caché DNS local (`ipconfig /flushdns`), logrando la resolución inmediata y la carga correcta de la página web.
