@@ -9,7 +9,7 @@
 * **Integrante 1:** Carlos Jerves
 * **Integrante 2:** Marcelino Espinoza
 * **Sistema Operativo:** CentOS (sin GUI - Interfaz de Línea de Comandos)
-* **Fecha:** Noviembre 2026
+* **Fecha:** 20 de Noviembre 2026
 
 ---
 
