@@ -8,8 +8,8 @@
 * **Modalidad:** En Parejas
 * **Integrante 1:** Carlos Jerves
 * **Integrante 2:** Marcelino Espinoza
-* **Sistema Operativo:** CentOS / RHEL (Máquina Virtual)
-* **Fecha:** 20 de Noviembre 2026
+* **Sistema Operativo:** CentOS (sin GUI - Interfaz de Línea de Comandos)
+* **Fecha:** Noviembre 2026
 
 ---
 
@@ -47,3 +47,9 @@ ping -c 10 8.8.8.8
 # 3. Creación de carpeta de respaldos
 mkdir -p /root/backups_interciclo
 ls -lh /root/backups_interciclo/
+```
+
+---
+
+### 🎥 Entregable Audiovisual
+* **Enlace al Video Demostrativo:** `[Pegar aquí el enlace público de YouTube No Listado / Drive / OneDrive]`
