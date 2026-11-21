@@ -9,7 +9,7 @@
 * **Integrante 1:** Carlos Jerves
 * **Integrante 2:** Marcelino Espinoza
 * **Sistema Operativo:** CentOS (sin GUI - Interfaz de Línea de Comandos)
-* **Fecha:** 20 de Noviembre 2026
+* **Fecha:** Noviembre 2026
 
 ---
 
@@ -49,10 +49,8 @@ mkdir -p /root/backups_interciclo
 ls -lh /root/backups_interciclo/
 ```
 
-**Evidencia en consola (Hostname, IP, Ping de 10 paquetes y Respaldos):**
-> *(Pegar aquí las capturas de pantalla donde se observe el prompt `root@srv-jerves-espinoza`, la dirección IP `192.168.0.102`, el resultado del `ping -c 10 8.8.8.8` y el contenido de `/root/backups_interciclo/`).*
-> `![Evidencia Ping e IP](ruta/a/tu/captura_ping_ip.png)`
-> `![Evidencia Respaldos](ruta/a/tu/captura_respaldos.png)`
+**Evidencia en consola (Hostname, IP y Ping de 10 paquetes):**
+> *(Pegar aquí la captura de pantalla donde se observe el prompt `root@srv-jerves-espinoza`, la dirección IP `192.168.0.102` y el resultado exitoso del `ping -c 10 8.8.8.8`).*
 
 ---
 
