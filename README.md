@@ -50,7 +50,8 @@ ls -lh /root/backups_interciclo/
 ```
 
 **Evidencia en consola (Hostname, IP y Ping de 10 paquetes):**
-> *(Pegar aquí la captura de pantalla donde se observe el prompt `root@srv-jerves-espinoza`, la dirección IP `192.168.0.102` y el resultado exitoso del `ping -c 10 8.8.8.8`).*
+<img width="940" height="390" alt="image" src="https://github.com/user-attachments/assets/c647fba4-eda6-4072-9737-e44b53d510f9" />
+
 
 ---
 
