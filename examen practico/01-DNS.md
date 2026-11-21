@@ -156,9 +156,10 @@ dir prueba*
 
 **Evidencia en consola (Servidor y Cliente):**
 > *(Pegar aquí las capturas de pantalla donde se observe claramente el prompt `root@srv-jerves-espinoza`, el estado `active (running)` de `named` y la respuesta exitosa de `nslookup` desde el cliente)[cite: 1, 2].*
-> <img width="540" height="141" alt="image" src="https://github.com/user-attachments/assets/44c1f85f-33f6-49bc-8444-4e753f23f184" />
-`
-> `![Evidencia DNS Cliente](ruta/a/tu/captura_dns_cliente.png)`
+<img width="941" height="240" alt="image" src="https://github.com/user-attachments/assets/e52b87a1-b50b-4101-9eec-1bc788b64c99" />
+<img width="940" height="454" alt="image" src="https://github.com/user-attachments/assets/344b5086-d101-4f06-aa8e-32573cd6f85a" />
+<img width="940" height="352" alt="image" src="https://github.com/user-attachments/assets/6629930e-2a84-4bb2-9137-1f8cca43f9d7" />
+
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
 * **Problema detectado:** Al intentar iniciar el servicio con `systemctl start named` tras crear el archivo `/var/named/jerves-espinoza.lab.zone`, el servicio falló al cargar la zona reportando un error de permisos (`permission denied`) en los registros del sistema (`journalctl -xeu named`)[cite: 2].
