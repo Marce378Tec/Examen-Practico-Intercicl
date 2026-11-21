@@ -104,9 +104,10 @@ scp -P 2222 jerves_espinoza@ssh.jerves-espinoza.lab:/home/jerves_espinoza/prueba
 ```
 
 **Evidencia en consola (SSH y SCP Bidireccional):**
-> *(Pegar aquí las capturas de pantalla donde se observe la sesión SSH activa en `jerves_espinoza@srv-jerves-espinoza`, el comando `scp -P 2222` de subida y el comando `scp -P 2222` de descarga).*
-> `![Evidencia Conexión SSH](ruta/a/tu/captura_ssh_conexion.png)`
-> `![Evidencia Transferencia SCP](ruta/a/tu/captura_scp_bidireccional.png)`
+<img width="941" height="69" alt="image" src="https://github.com/user-attachments/assets/ff1206fe-0ad0-4b62-8cf4-f5f8e426a339" />
+<img width="940" height="410" alt="image" src="https://github.com/user-attachments/assets/ccca3b93-9212-4b42-ac14-5e2a847f238f" />
+<img width="940" height="498" alt="image" src="https://github.com/user-attachments/assets/2ecd87ce-bacf-4242-92c9-5d4e47713cae" />
+
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
 * **Problema detectado:** Al cambiar la directiva `Port 2222` en `/etc/ssh/sshd_config` y ejecutar `systemctl restart sshd`, el servicio falló al iniciar con el mensaje `Job for sshd.service failed because the control process exited with error code` y en los registros apareció `error: Bind to port 2222 on 0.0.0.0 failed: Permission denied`.
