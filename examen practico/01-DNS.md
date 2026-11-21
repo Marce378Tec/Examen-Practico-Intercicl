@@ -155,7 +155,6 @@ dir prueba*
 ```
 
 **Evidencia en consola (Servidor y Cliente):**
-> *(Pegar aquí las capturas de pantalla donde se observe claramente el prompt `root@srv-jerves-espinoza`, el estado `active (running)` de `named` y la respuesta exitosa de `nslookup` desde el cliente)[cite: 1, 2].*
 <img width="941" height="240" alt="image" src="https://github.com/user-attachments/assets/e52b87a1-b50b-4101-9eec-1bc788b64c99" />
 <img width="940" height="454" alt="image" src="https://github.com/user-attachments/assets/344b5086-d101-4f06-aa8e-32573cd6f85a" />
 <img width="940" height="352" alt="image" src="https://github.com/user-attachments/assets/6629930e-2a84-4bb2-9137-1f8cca43f9d7" />
