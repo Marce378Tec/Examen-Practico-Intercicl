@@ -11,7 +11,7 @@ El servidor web implementado mediante **Apache (`httpd`)** aloja y sirve conteni
 | Parámetro | Detalle / Valor |
 | :--- | :--- |
 | **Hostname del Servidor** | `srv-jerves-espinoza` |
-| **Dirección IP del Servidor** | `192.168.0.102` |
+| **Dirección IP del Servidor** | `192.168.0.107` |
 | **Dominio Web Asignado** | `http://web.jerves-espinoza.lab` |
 | **Puerto y Protocolo** | `80/TCP` (HTTP) |
 | **Paquete Instalado** | `httpd` |
@@ -49,7 +49,7 @@ Se implementó el documento HTML de demostración identificando visiblemente a a
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign In - Práctica académica</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+- { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
@@ -311,6 +311,6 @@ curl -I [http://web.jerves-espinoza.lab](http://web.jerves-espinoza.lab)
 
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
-* **Problema detectado:** Al ingresar `http://web.jerves-espinoza.lab` en el navegador de la máquina anfitriona por primera vez, el navegador arrojó un error de sitio no encontrado (`DNS_PROBE_FINISHED_NXDOMAIN`).
-* **Causa raíz:** La tarjeta de red de la máquina anfitriona (cliente) aún estaba utilizando el servidor DNS automático del router doméstico (DHCP), el cual desconoce la zona interna `.lab`.
-* **Solución aplicada:** Se configuró manualmente la dirección IP `192.168.0.102` como servidor DNS preferido en las propiedades IPv4 del adaptador de red de la máquina cliente y se limpió la caché DNS local (`ipconfig /flushdns`), logrando la resolución inmediata y la carga correcta de la página web.
+- **Problema detectado:** Al ingresar `http://web.jerves-espinoza.lab` en el navegador de la máquina anfitriona por primera vez, el navegador arrojó un error de sitio no encontrado (`DNS_PROBE_FINISHED_NXDOMAIN`).
+- **Causa raíz:** La tarjeta de red de la máquina anfitriona (cliente) aún estaba utilizando el servidor DNS automático del router doméstico (DHCP), el cual desconoce la zona interna `.lab`.
+- **Solución aplicada:** Se configuró manualmente la dirección IP `192.168.0.107` como servidor DNS preferido en las propiedades IPv4 del adaptador de red de la máquina cliente y se limpió la caché DNS local (`ipconfig /flushdns`), logrando la resolución inmediata y la carga correcta de la página web.
