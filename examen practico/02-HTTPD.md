@@ -39,7 +39,8 @@ ls -lh /root/backups_interciclo/
 ```
 
 ### 2. Creación de Página Web Personalizada (`/var/www/html/index.html`)
-Se implementó el documento HTML de demostración identificando visiblemente a ambos integrantes en formato `nombre_apellido` (`carlos_jerves` y `marcelino_espinoza`), junto con los parámetros del servidor de laboratorio:
+Se implementó el documento HTML correspondiente al clon de la página de inicio de sesión de Epic Games como página de demostración en el servidor de laboratorio:
+
 
 ```html
 <!DOCTYPE html>
