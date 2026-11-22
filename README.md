@@ -50,7 +50,8 @@ ls -lh /root/backups_interciclo/
 ```
 
 **Evidencia en consola (Hostname, IP y Ping de 10 paquetes):**
-<img width="940" height="390" alt="image" src="https://github.com/user-attachments/assets/c647fba4-eda6-4072-9737-e44b53d510f9" />
+<img width="1917" height="726" alt="image" src="https://github.com/user-attachments/assets/cf54c9a0-602f-434f-86ea-ad5c53a31e1d" />
+
 
 
 ---
