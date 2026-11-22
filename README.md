@@ -8,7 +8,7 @@
 * **Modalidad:** En Parejas
 * **Integrante 1:** Carlos Jerves
 * **Integrante 2:** Marcelino Espinoza
-* **Sistema Operativo:** CentOS (sin GUI - Interfaz de Línea de Comandos)
+* **Sistema Operativo:** CentOS Stream 10 (sin GUI - Interfaz de Línea de Comandos)
 * **Fecha:** 20 de Noviembre 2026
 
 ---
