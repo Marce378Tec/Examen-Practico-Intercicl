@@ -49,9 +49,10 @@ mkdir -p /root/backups_interciclo
 ls -lh /root/backups_interciclo/
 ```
 
-**Evidencia en consola (Ping de 10 paquetes y respaldos):**
+**Evidencia en consola (Ping de 10 paquetes, respaldos y conexión desde MobaXterm):**
 <img width="1917" height="726" alt="image" src="https://github.com/user-attachments/assets/cf54c9a0-602f-434f-86ea-ad5c53a31e1d" />
 <img width="1157" height="383" alt="image" src="https://github.com/user-attachments/assets/ed3efea1-9c51-4741-b898-ddb57a3d80e8" />
+<img width="1600" height="851" alt="image" src="https://github.com/user-attachments/assets/2d50b50f-d26a-4d76-b14a-5f60df419785" />
 
 
 
