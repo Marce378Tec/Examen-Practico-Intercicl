@@ -49,7 +49,7 @@ Se implementó el documento HTML de demostración identificando visiblemente a a
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign In - Práctica académica</title>
   <style>
-- { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
