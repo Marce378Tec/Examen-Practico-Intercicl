@@ -305,8 +305,9 @@ curl -I [http://web.jerves-espinoza.lab](http://web.jerves-espinoza.lab)
 ```
 
 **Evidencia en consola y navegador:**
-<img width="940" height="467" alt="image" src="https://github.com/user-attachments/assets/b74d472a-2f6e-4442-8027-cb26d4cf4139" />
-<img width="940" height="498" alt="image" src="https://github.com/user-attachments/assets/fc700da7-3d7d-4a25-a40f-5971a60d0eff" />
+<img width="1917" height="1020" alt="image" src="https://github.com/user-attachments/assets/4e997ea5-987e-4bdf-8879-ff8b4629b12b" />
+<img width="1917" height="1017" alt="image" src="https://github.com/user-attachments/assets/f28e5c50-b670-444c-8fcb-e5c145ed2a7f" />
+
 
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
