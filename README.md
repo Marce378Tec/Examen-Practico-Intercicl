@@ -33,7 +33,7 @@ Cada documento técnico sigue la estructura obligatoria de 4 secciones (*01 Arqu
 
 ---
 
-### 🛠️ Evidencia Rápida: Entorno Base y Respaldos
+### 🛠️ **Evidencia en consola (Ping de 10 paquetes, respaldos y conexión desde MobaXterm):**
 Antes de intervenir los servicios, se configuró la identidad del nodo, se verificó la conectividad externa (10 paquetes) y se creó el directorio de copias de seguridad:
 
 ```bash
