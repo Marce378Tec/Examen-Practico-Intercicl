@@ -49,7 +49,7 @@ mkdir -p /root/backups_interciclo
 ls -lh /root/backups_interciclo/
 ```
 
-**Evidencia en consola (Hostname, IP y Ping de 10 paquetes):**
+**Evidencia en consola (Ping de 10 paquetes y respaldos):**
 <img width="1917" height="726" alt="image" src="https://github.com/user-attachments/assets/cf54c9a0-602f-434f-86ea-ad5c53a31e1d" />
 <img width="1157" height="383" alt="image" src="https://github.com/user-attachments/assets/ed3efea1-9c51-4741-b898-ddb57a3d80e8" />
 
