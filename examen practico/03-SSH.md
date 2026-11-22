@@ -104,9 +104,10 @@ scp -P 2222 jerves_espinoza@ssh.jerves-espinoza.lab:/home/jerves_espinoza/prueba
 ```
 
 **Evidencia en consola (SSH y SCP Bidireccional):**
-<img width="941" height="69" alt="image" src="https://github.com/user-attachments/assets/ff1206fe-0ad0-4b62-8cf4-f5f8e426a339" />
-<img width="940" height="410" alt="image" src="https://github.com/user-attachments/assets/ccca3b93-9212-4b42-ac14-5e2a847f238f" />
-<img width="940" height="498" alt="image" src="https://github.com/user-attachments/assets/2ecd87ce-bacf-4242-92c9-5d4e47713cae" />
+<img width="1912" height="208" alt="image" src="https://github.com/user-attachments/assets/6005d941-d9a7-4cd5-b362-3db8c59e1da9" />
+<img width="1283" height="613" alt="image" src="https://github.com/user-attachments/assets/d6f77df3-933b-4811-99ef-71d900bf633c" />
+<img width="1477" height="646" alt="image" src="https://github.com/user-attachments/assets/cafaea28-a657-4ab8-9c48-e52c54a749b2" />
+
 
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
