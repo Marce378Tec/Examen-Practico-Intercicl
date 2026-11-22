@@ -4,12 +4,12 @@
 ---
 
 ### 📋 Información General
-* **Asignatura:** Sistemas Operativos 1
-* **Modalidad:** En Parejas
-* **Integrante 1:** Carlos Jerves
-* **Integrante 2:** Marcelino Espinoza
-* **Sistema Operativo:** CentOS Stream 10 (sin GUI - Interfaz de Línea de Comandos)
-* **Fecha:** 20 de Noviembre 2026
+- **Asignatura:** Sistemas Operativos 1
+- **Modalidad:** En Parejas
+- **Integrante 1:** Carlos Jerves
+- **Integrante 2:** Marcelino Espinoza
+- **Sistema Operativo:** CentOS Stream 10 (sin GUI - Interfaz de Línea de Comandos)
+- **Fecha:** 20 de Noviembre 2026
 
 ---
 
@@ -33,7 +33,7 @@ Cada documento técnico sigue la estructura obligatoria de 4 secciones (*01 Arqu
 
 ---
 
-### 🛠️ **Evidencia en consola (Ping de 10 paquetes, respaldos y conexión desde MobaXterm):**
+### 🛠️ Preparación del Entorno Inicial
 Antes de intervenir los servicios, se configuró la identidad del nodo, se verificó la conectividad externa (10 paquetes) y se creó el directorio de copias de seguridad:
 
 ```bash
@@ -54,9 +54,7 @@ ls -lh /root/backups_interciclo/
 <img width="1157" height="383" alt="image" src="https://github.com/user-attachments/assets/ed3efea1-9c51-4741-b898-ddb57a3d80e8" />
 <img width="1600" height="851" alt="image" src="https://github.com/user-attachments/assets/2d50b50f-d26a-4d76-b14a-5f60df419785" />
 
-
-
 ---
 
 ### 🎥 Entregable Audiovisual
-* **Enlace al Video Demostrativo:** `https://youtu.be/-oVp-ugUQHg`
+- **Enlace al Video Demostrativo:** [https://youtu.be/-oVp-ugUQHg](https://youtu.be/-oVp-ugUQHg)
