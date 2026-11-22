@@ -11,7 +11,7 @@ El servicio **OpenSSH (`sshd`)** proporciona administración remota cifrada y tr
 | Parámetro | Detalle / Valor |
 | :--- | :--- |
 | **Hostname del Servidor** | `srv-jerves-espinoza` |
-| **Dirección IP del Servidor** | `192.168.0.102` |
+| **Dirección IP del Servidor** | `192.168.0.107` |
 | **Dominio de Acceso Remoto** | `ssh.jerves-espinoza.lab` |
 | **Puerto Personalizado** | `2222/TCP` |
 | **Usuario Remoto Operativo** | `jerves_espinoza` |
@@ -110,9 +110,9 @@ scp -P 2222 jerves_espinoza@ssh.jerves-espinoza.lab:/home/jerves_espinoza/prueba
 
 
 ### 2. Incidente Encontrado y Solución Aplicada (Troubleshooting)
-* **Problema detectado:** Al cambiar la directiva `Port 2222` en `/etc/ssh/sshd_config` y ejecutar `systemctl restart sshd`, el servicio falló al iniciar con el mensaje `Job for sshd.service failed because the control process exited with error code` y en los registros apareció `error: Bind to port 2222 on 0.0.0.0 failed: Permission denied`.
-* **Causa raíz:** La política predeterminada de SELinux en modo `Enforcing` restringe el enlace (*bind*) del demonio `sshd` exclusivamente al puerto `22/TCP`, bloqueando cualquier puerto no registrado en `ssh_port_t`.
-* **Solución aplicada:** Se instaló el paquete `policycoreutils-python-utils` y se añadió el puerto `2222/TCP` a la definición de puertos permitidos para SSH en SELinux antes de reiniciar el demonio:
+- **Problema detectado:** Al cambiar la directiva `Port 2222` en `/etc/ssh/sshd_config` y ejecutar `systemctl restart sshd`, el servicio falló al iniciar con el mensaje `Job for sshd.service failed because the control process exited with error code` y en los registros apareció `error: Bind to port 2222 on 0.0.0.0 failed: Permission denied`.
+- **Causa raíz:** La política predeterminada de SELinux en modo `Enforcing` restringe el enlace (*bind*) del demonio `sshd` exclusivamente al puerto `22/TCP`, bloqueando cualquier puerto no registrado en `ssh_port_t`.
+- **Solución aplicada:** Se instaló el paquete `policycoreutils-python-utils` y se añadió el puerto `2222/TCP` a la definición de puertos permitidos para SSH en SELinux antes de reiniciar el demonio:
   ```bash
   semanage port -a -t ssh_port_t -p tcp 2222
   systemctl restart sshd
